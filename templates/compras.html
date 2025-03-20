@@ -2,9 +2,16 @@
 {% block conteudo %}
     <p>Página de compras</p>
 
+    <h3>Adicionar item</h3>
+    <form action="compras_adc.php" method="POST">
+        <input type="text" name="item" placeholder="Item" id="item">
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h3>Minha lista de compras</h3>
     <ul>
         {% for compra in compras %}
-            <li>{{ compra.item }}</li>
+            <li>{{ compra.item }} <a href="apagar.php?id={{compra.id}}" style="text-decoration: none; color: red;">Apagar</a> <a href="compra.php?id={{compra.id}}" style="color: green; text-decoration: none;">Editar</a></li>
         {% endfor %}
     </ul>
-{% endblock %}
+{% endblock %}  
