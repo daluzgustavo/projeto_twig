@@ -1,0 +1,36 @@
+{% extends "_base.html" %}
+
+{% block conteudo %}
+
+<h3>Adicionar compromisso</h3>
+<form action="compromissos_adc.php" method="post">
+    <input type="text" name="titulo" placeholder="Escreva o titulo">
+    <input type="date" name="data">
+
+    <input type="submit" value="Adicionar">
+</form>
+
+<h3>Minha lista de compromissos</h3>
+
+<h4>Ordenar</h4>
+    <a href="compromissos.php?ordem='mais_proximo'">Mais próximo</a>
+    <a href="compromissos.php?ordem='mais_distante'">Mais distante</a>
+<ul>
+    {% for compromisso in compromissos %}
+        <li>
+            {{ compromisso.titulo }}
+            |
+            {{ compromisso.data }}
+            |
+            {% if compromisso.final_de_semana %}
+            Final de semana
+            |
+            {% endif %}
+            <a href="compromissos_editar.php?id={{ compromisso.id }}">Editar</a>
+            |
+            <a href="compromissos_apagar.php?id={{ compromisso.id }}">X</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
