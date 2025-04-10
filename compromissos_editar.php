@@ -18,10 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 }
 else {
-    $edit = $pdo->prepare('UPDATE compromissos SET titulo = :titulo, data = :data WHERE id = :id');
+    $edit = $pdo->prepare('UPDATE compromissos SET titulo = :titulo, date = :data WHERE id = :id');
     $edit->execute([
         ':titulo' => $_POST['titulo'],
-        ':data' => $_POST['data'],
+        ':data' => $_POST['date'],
         ':id' => $_POST['id'],
     ]);
     header('location:compromissos.php');
