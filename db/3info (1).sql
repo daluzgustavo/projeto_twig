@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Abr-2025 às 15:46
+-- Tempo de geração: 17-Abr-2025 às 16:28
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -64,6 +64,28 @@ INSERT INTO `compromissos` (`id`, `titulo`, `date`) VALUES
 (10, 'comp 1', '2025-04-23'),
 (11, 'comp 2 ', '2025-04-20');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `user`, `password`) VALUES
+(1, 'admin', '$2y$10$HBwjAlUBPiOHDCNaMKNzTevp1AIk1mg.eu/33UnCeiyokqEKOApXe'),
+(2, 'gustavo', '1234'),
+(3, 'perin', '4321'),
+(4, 'mateus', '123');
+
 --
 -- Índices para tabelas despejadas
 --
@@ -81,6 +103,12 @@ ALTER TABLE `compromissos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -95,6 +123,12 @@ ALTER TABLE `compras`
 --
 ALTER TABLE `compromissos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
