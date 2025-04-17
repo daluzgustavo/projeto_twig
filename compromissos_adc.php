@@ -1,6 +1,7 @@
 <?php
 
 require('inc/banco.php');
+require_once('verifica_login.php');
 
 $titulo = $_POST['titulo'] ?? null;
 $data = $_POST['date'] ?? null;

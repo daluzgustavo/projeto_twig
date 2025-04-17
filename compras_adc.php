@@ -1,6 +1,7 @@
 <?php
 # compras_adc.php
 require('inc/banco.php');
+require_once('verifica_login.php');
 
 $item = $_POST['item'] ?? null;
 

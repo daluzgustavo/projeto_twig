@@ -2,6 +2,7 @@
 # compras_editar.php
 require_once('twig_carregar.php');
 require('inc/banco.php');
+require_once('verifica_login.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $id = $_GET['id'] ?? null;
